@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241333">
+<title>Minal's 21st Birthday ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--pink:#ffb8dc;--hot:#ff6fb5;--lav:#c7a5ff;--ink:#241333;--cream:#fff8fd;--muted:#ead8f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#1e102c;color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0}.stars,.confetti-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;opacity:.6;animation:twinkle 2.8s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:.12;transform:scale(.5)}}@keyframes float{50%{transform:translateY(-18px) rotate(5deg)}}@keyframes pulse{50%{filter:drop-shadow(0 0 18px #ff9bd4);transform:scale(1.04)}}@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}@keyframes pop{0%{transform:scale(.2);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}@keyframes flicker{50%{transform:scaleY(.7);opacity:.7}}@keyframes reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+header{position:relative;z-index:2;min-height:100vh;display:grid;place-items:center;text-align:center;padding:36px 20px;background:radial-gradient(ellipse at 50% 40%,#633c79 0,#321b49 45%,#1e102c 100%)}
+.hero{max-width:850px}.eyebrow{letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;color:#f5c8e5}.hero h1{font:800 clamp(3.5rem,11vw,7.8rem)/.98 'Playfair Display',serif;margin:22px 0 18px;background:linear-gradient(120deg,#fff,#ffc4e2 45%,#c9b4ff);color:transparent;background-clip:text;filter:drop-shadow(0 8px 30px #ff9bd455)}
+.hero p{font-size:clamp(1rem,2.5vw,1.2rem);color:#f1dff4;max-width:580px;margin:0 auto 28px;line-height:1.7}.hero .tag{display:inline-block;border:1px solid #ffffff35;border-radius:999px;padding:9px 16px;color:#ffe1f2;background:#ffffff0c}
+.btn{padding:14px 22px;border-radius:999px;background:linear-gradient(110deg,#ff8fc7,#c19bff);color:#32143e;font-weight:700;box-shadow:0 8px 28px #ed83c944;transition:.2s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #ed83c966}.btn.secondary{background:#ffffff12;color:#ffeafa;border:1px solid #ffffff30;box-shadow:none}
+section{position:relative;z-index:1;padding:90px 20px;max-width:1100px;margin:auto}.section-head{text-align:center;margin-bottom:38px}.kicker{color:#f3a9d2;text-transform:uppercase;letter-spacing:.2em;font-size:.72rem}.section-head h2{font:700 clamp(2rem,5vw,3.3rem) 'Playfair Display',serif;margin:10px 0}.section-head p{color:#ddc9e8;line-height:1.7;margin:0 auto;max-width:620px}
+.panel{background:linear-gradient(145deg,#ffffff12,#ffffff06);border:1px solid #ffffff20;border-radius:26px;padding:26px;box-shadow:0 18px 60px #0c061633;backdrop-filter:blur(12px)}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:650px;margin:28px auto 0}.timebox{padding:18px 8px;border-radius:18px;background:#ffffff10;border:1px solid #ffffff20}.timebox strong{display:block;font:700 clamp(1.7rem,5vw,2.7rem) 'Playfair Display';color:#ffc2e2}.timebox span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#e9d6ef}
+.cake-wrap{display:flex;flex-direction:column;align-items:center;gap:20px}.cake{position:relative;width:min(290px,80vw);height:230px;margin:10px auto 0;filter:drop-shadow(0 20px 20px #10091c77)}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:18px 18px 12px 12px;background:linear-gradient(90deg,#e987bd,#ffd2e8 48%,#e98cbd);box-shadow:inset 0 -12px 0 #d96ba7,inset 0 7px 0 #fff0f7}
+.tier:before{content:"";position:absolute;left:0;right:0;top:-9px;height:23px;border-radius:50%;background:#ffe6f2;box-shadow:0 5px 0 #e98cbd}
+.tier.bottom{width:260px;height:85px;bottom:0}.tier.middle{width:205px;height:70px;bottom:72px;background:linear-gradient(90deg,#b88bea,#e5caff 50%,#b88bea);box-shadow:inset 0 -10px 0 #a77bdb}.tier.middle:before{background:#f0e2ff;box-shadow:0 5px 0 #b88bea}.tier.top{width:145px;height:58px;bottom:130px;background:linear-gradient(90deg,#ffb1d7,#ffe0ef 50%,#ffb1d7);box-shadow:inset 0 -8px 0 #e88ab9}.tier.top:before{background:#fff0f7;box-shadow:0 5px 0 #ffb1d7}
+.candle{position:absolute;bottom:184px;left:50%;width:9px;height:39px;background:repeating-linear-gradient(135deg,#fff 0 5px,#b78bea 5px 10px);border-radius:4px;z-index:3;transform:translateX(-50%)}
+.flame{position:absolute;top:-19px;left:1px;width:8px;height:15px;border-radius:60% 40% 60% 40%;background:radial-gradient(circle at 40% 65%,#fff7a8 0 20%,#ffae43 50%,#ff6d45 75%);transform:rotate(8deg);animation:flicker .7s infinite}
+.candle.off .flame{display:none}.smoke{position:absolute;top:-22px;left:0;color:#ddd;opacity:0}.candle.off .smoke{animation:smoke 1.3s forwards}@keyframes smoke{to{opacity:0;transform:translateY(-30px) scale(2)}}
+.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.note{color:#dfcbe8;text-align:center;font-size:.9rem;min-height:24px}
+.game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.game-card{min-height:210px;display:flex;flex-direction:column;justify-content:space-between;gap:14px}.game-card .emoji{font-size:2.3rem}.game-card h3{font:700 1.35rem 'Playfair Display';margin:8px 0}.game-card p{color:#decce8;line-height:1.5;font-size:.92rem;margin:0}
+.balloon-area{min-height:120px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:13px}.balloon{width:49px;height:62px;border-radius:50% 50% 45% 45%;position:relative;box-shadow:inset -8px -5px 0 #00000014;animation:float 2s infinite ease-in-out;transition:.15s}.balloon:after{content:"";position:absolute;bottom:-9px;left:22px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:9px solid currentColor}.balloon:before{content:"";position:absolute;width:1px;height:30px;background:#ffffff80;top:65px;left:24px}.balloon:active{transform:scale(0);opacity:0}
+.gift-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.gift{width:85px;height:85px;border-radius:18px;background:linear-gradient(140deg,#ffacd3,#b99bff);font-size:2.5rem;box-shadow:0 10px 25px #0003;transition:.2s}.gift:hover{transform:translateY(-6px) rotate(-4deg)}.gift-message{min-height:25px;text-align:center;color:#ffd6eb}
+.wheel-wrap{display:grid;place-items:center;gap:15px}.wheel{width:190px;height:190px;border-radius:50%;border:8px solid #fff0f8;background:conic-gradient(#ff9ccf 0 60deg,#b89aff 60deg 120deg,#ffd28f 120deg 180deg,#9ddbd4 180deg 240deg,#f5a9b9 240deg 300deg,#d7b5ff 300deg);display:grid;place-items:center;box-shadow:0 10px 35px #0004;transition:transform 3s cubic-bezier(.12,.75,.12,1)}.wheel span{background:#fff8fd;color:#5a3568;border-radius:50%;width:58px;height:58px;display:grid;place-items:center;font-size:1.5rem}
+.quiz-options{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}.quiz-options button{background:#ffffff12;border:1px solid #ffffff30;color:#fff0fa;padding:10px 15px;border-radius:999px}.quiz-options button:hover{background:#ffacd3;color:#3b2048}
+.letter{max-width:720px;margin:auto;text-align:center}.envelope{font-size:4rem;animation:float 3s infinite}.letter-copy{display:none;text-align:left;line-height:1.9;color:#f6e7f4;margin-top:22px;white-space:pre-line}.letter-copy.show{display:block;animation:reveal .8s}
+footer{text-align:center;padding:55px 20px 75px;color:#d9c3e4;position:relative;z-index:1}footer strong{color:#ffc1e0}
+.confetti{position:fixed;top:-20px;width:9px;height:13px;z-index:10;pointer-events:none;animation:fall 3.5s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(760deg);opacity:0}}
+.firework{position:fixed;z-index:9;pointer-events:none;font-size:24px;animation:fire 1.5s ease-out forwards}@keyframes fire{0%{opacity:0;transform:scale(.2)}35%{opacity:1;transform:scale(1.7)}100%{opacity:0;transform:scale(3) translateY(-30px)}}
+.hidden{display:none!important}.finale{background:radial-gradient(ellipse at center,#754681,#2a173d 70%,#1e102c);border-radius:30px;text-align:center;padding:55px 20px}.finale h2{font:800 clamp(2.5rem,8vw,5.5rem) 'Playfair Display';color:#ffc3e3;margin:10px 0}.small{font-size:.82rem;color:#d9c3e4}
+@media(max-width:650px){section{padding:70px 17px}.game-grid{grid-template-columns:1fr}.panel{padding:20px}.countdown{gap:7px}.timebox{padding:14px 4px}.hero h1{font-size:3.7rem}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div><div class="confetti-layer" id="confetti"></div>
+<header id="top">
+ <div class="hero">
+  <span class="tag">A little universe made just for you ✨</span>
+  <div class="eyebrow" style="margin-top:28px">November 25 · A very special day</div>
+  <h1>Happy Birthday<br>Minal!</h1>
+  <p>Twenty-one looks magical on you. Get ready for sparkles, sweet surprises, birthday games and a wish made just for you.</p>
+  <button class="btn" onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'});confettiBurst()">Enter the celebration 💖</button>
+ </div>
+</header>
+<main>
+<section id="countdown">
+ <div class="section-head"><div class="kicker">The big day is almost here</div><h2>Counting down to 21 🎀</h2><p>Your birthday deserves its own little countdown. The celebration starts right here.</p></div>
+ <div class="panel" style="text-align:center"><div class="countdown" id="timer"><div class="timebox"><strong>--</strong><span>Days</span></div><div class="timebox"><strong>--</strong><span>Hours</span></div><div class="timebox"><strong>--</strong><span>Minutes</span></div><div class="timebox"><strong>--</strong><span>Seconds</span></div></div><p class="note" id="timer-note">The magic is getting closer...</p></div>
+</section>
+<section id="cake-section">
+ <div class="section-head"><div class="kicker">Make a wish, birthday girl</div><h2>Your birthday cake 🎂</h2><p>Take a breath, think of your biggest wish, then blow out the candles with a click.</p></div>
+ <div class="panel cake-wrap">
+  <div class="cake"><div class="tier bottom"></div><div class="tier middle"></div><div class="tier top"></div><div class="candle" id="candle1" style="left:42%"><i class="flame"></i><i class="smoke">〰</i></div><div class="candle" id="candle2"><i class="flame"></i><i class="smoke">〰</i></div><div class="candle" id="candle3" style="left:58%"><i class="flame"></i><i class="smoke">〰</i></div></div>
+  <div class="controls"><button class="btn" id="wishBtn" onclick="blowCandles()">Make a wish & blow! 🌬️</button><button class="btn secondary" onclick="relight()">Light them again</button></div><div class="note" id="cake-note">Three little flames. One very big wish. 💫</div>
+ </div>
+</section>
+<section id="games">
+ <div class="section-head"><div class="kicker">A tiny birthday playground</div><h2>Let's have some fun! 🎮</h2><p>Pop, open, spin and play. Every little click has a surprise waiting.</p></div>
+ <div class="game-grid">
+  <div class="panel game-card"><div><div class="emoji">🎈</div><h3>Balloon Pop</h3><p>Pop all the floating balloons to uncover a shower of birthday cheer.</p></div><div><div class="balloon-area" id="balloons"></div><div class="note" id="balloon-note">Pop the balloons!</div><button class="btn secondary" onclick="makeBalloons()">Reset balloons</button></div></div>
+  <div class="panel game-card"><div><div class="emoji">🎁</div><h3>Mystery Gifts</h3><p>Choose a gift box. Each one hides a little birthday treat.</p></div><div><div class="gift-row"><button class="gift" onclick="openGift(0)">🎁</button><button class="gift" onclick="openGift(1)">🎀</button><button class="gift" onclick="openGift(2)">🎁</button></div><div class="gift-message" id="gift-message">Pick your mystery gift!</div></div></div>
+  <div class="panel game-card"><div><div class="emoji">🎡</div><h3>Lucky Birthday Wheel</h3><p>Spin the wheel and let birthday luck choose a silly challenge.</p></div><div class="wheel-wrap"><div class="wheel" id="wheel"><span>✨</span></div><button class="btn" onclick="spinWheel()">Spin the wheel!</button><div class="note" id="wheel-note">Your birthday fate awaits...</div></div></div>
+  <div class="panel game-card"><div><div class="emoji">🦋</div><h3>How well do you know you?</h3><p>A tiny personality quiz. There are no wrong answers, only main-character energy.</p></div><div><div class="note" id="quiz-question">Choose your birthday mood:</div><div class="quiz-options" id="quiz-options"><button onclick="answerQuiz('sweet')">Sweet & cozy 🍓</button><button onclick="answerQuiz('adventure')">Wild adventure 🦋</button><button onclick="answerQuiz('sparkle')">All things sparkle ✨</button></div><div class="note" id="quiz-result"></div></div></div>
+ </div>
+</section>
+<section id="letter">
+ <div class="section-head"><div class="kicker">A little note from the heart</div><h2>Something just for you 💌</h2><p>Some wishes deserve to be opened slowly.</p></div>
+ <div class="panel letter"><div class="envelope">💌</div><button class="btn" onclick="openLetter()">Open your birthday letter</button><div class="letter-copy" id="letter-copy">Dear Minal,
+
+Happy 21st birthday! May this new chapter bring you countless reasons to smile, the courage to chase every dream, and the confidence to become everything you imagine.
+
+Keep being wonderfully you. May your days be filled with laughter, kind people, unexpected adventures and little moments that turn into beautiful memories.
+
+Thank you for being you, for giving me so much love, and for always supporting me through every situation. I'm truly grateful to have you in my life, and I'll always cherish the bond we share.
+
+Never stop smiling, never stop dreaming, and always keep being the wonderful person you are.
+
+You deserve happiness that feels endless and a year that surprises you in the best ways.
+
+Happy 21st Birthday once again! Love you, Baule! ❤️
+
+With lots of love,
+Your Little Brother 💗</div></div>
+</section>
+<section id="finale">
+ <div class="finale"><div class="kicker">And now, the grand birthday moment</div><h2>HAPPY 21st,<br>MINAL! 🎉</h2><p style="color:#f2dff1;max-width:570px;margin:0 auto 25px;line-height:1.8">May your year sparkle with joy, glow with confidence and overflow with unforgettable moments. Today is all about you!</p><button class="btn" onclick="grandFinale()">Launch the celebration ✨</button><p class="small" style="margin-top:22px">Made with love, just for Minal ♡</p></div>
+</section>
+</main>
+<footer>Designed with <strong>♡</strong> for Minal's 21st birthday · November 25, 2026</footer>
+<script>
+const starBox=document.getElementById('stars');for(let i=0;i<85;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';s.style.opacity=Math.random()*.7+.15;starBox.appendChild(s)}
+function confettiBurst(){const colors=['#ff8fc7','#c7a5ff','#ffe19b','#a9e8df','#fff0f8'];for(let i=0;i<100;i++){let c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=colors[i%colors.length];c.style.animationDelay=Math.random()*.8+'s';c.style.transform='rotate('+Math.random()*360+'deg)';document.body.appendChild(c);setTimeout(()=>c.remove(),4500)}}
+function fireworks(){for(let i=0;i<18;i++){let f=document.createElement('div');f.className='firework';f.textContent=['✨','💖','🎆','🌟','🎉'][i%5];f.style.left=(8+Math.random()*84)+'vw';f.style.top=(10+Math.random()*65)+'vh';f.style.animationDelay=Math.random()*.7+'s';document.body.appendChild(f);setTimeout(()=>f.remove(),2300)}}
+const target=new Date('2026-11-25T00:00:00');function updateTimer(){let diff=target-new Date();if(diff<=0){document.getElementById('timer').innerHTML='<div class="timebox" style="grid-column:1/-1"><strong>🎉 IT’S YOUR DAY! 🎉</strong><span>Happy birthday, Minal!</span></div>';document.getElementById('timer-note').textContent='Let the celebration begin!';return}let vals=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];document.querySelectorAll('#timer strong').forEach((el,i)=>el.textContent=String(vals[i]).padStart(2,'0'))}updateTimer();setInterval(updateTimer,1000);
+function blowCandles(){document.querySelectorAll('.candle').forEach(c=>c.classList.add('off'));document.getElementById('cake-note').textContent='Wish sent to the universe! May it find its way to you. 💫';document.getElementById('wishBtn').textContent='Wish made! 💗';confettiBurst();fireworks()}
+function relight(){document.querySelectorAll('.candle').forEach(c=>c.classList.remove('off'));document.getElementById('cake-note').textContent='Three little flames. One very big wish. 💫';document.getElementById('wishBtn').textContent='Make a wish & blow! 🌬️'}
+let popped=0;function makeBalloons(){popped=0;let area=document.getElementById('balloons');area.innerHTML='';let cols=['#ff91c8','#b89aff','#ffd18d','#9ddbd4','#f3a8c5'];for(let i=0;i<6;i++){let b=document.createElement('button');b.className='balloon';b.style.background=cols[i%cols.length];b.style.color=cols[i%cols.length];b.style.animationDelay=i*.15+'s';b.setAttribute('aria-label','Pop balloon');b.onclick=()=>{if(b.dataset.popped)return;b.dataset.popped='1';b.style.transform='scale(0)';b.style.opacity='0';setTimeout(()=>b.remove(),160);popped++;document.getElementById('balloon-note').textContent=popped===6?'Pop-tastic! You unlocked birthday sparkle! 🎊':`${6-popped} balloon${6-popped===1?'':'s'} left!`;if(popped===6){confettiBurst()}};area.appendChild(b)}document.getElementById('balloon-note').textContent='Pop the balloons!'}makeBalloons();
+const gifts=['A lifetime supply of hugs 🤗','A permission slip to be fabulous 👑','One wish and unlimited cake 🍰'];let giftOpened=false;function openGift(i){if(giftOpened){document.getElementById('gift-message').textContent='One surprise at a time! Your gift: '+gifts[i];return}giftOpened=true;document.getElementById('gift-message').textContent='Surprise! '+gifts[i];confettiBurst();setTimeout(()=>giftOpened=false,1400)}
+const challenges=['Give yourself a dramatic royal wave 👑','Strike your best superstar pose 🌟','Declare today a cake-for-breakfast day 🍰','Send someone a giant virtual hug 💗','Do a tiny happy dance 💃','Make one bold wish for year 21 ✨'];let spins=0;function spinWheel(){spins++;let w=document.getElementById('wheel');w.style.transform=`rotate(${spins*1440+Math.random()*360}deg)`;document.getElementById('wheel-note').textContent='The wheel is choosing...';setTimeout(()=>{document.getElementById('wheel-note').textContent=challenges[Math.floor(Math.random()*challenges.length)];},3050)}
+function answerQuiz(v){let msg={sweet:'Your superpower: making ordinary moments feel warm and lovely. 🍓',adventure:'Your superpower: turning life into one big story. 🦋',sparkle:'Your superpower: bringing the sparkle wherever you go. ✨'};document.getElementById('quiz-result').textContent=msg[v];document.getElementById('quiz-question').textContent='Official birthday personality result:';document.getElementById('quiz-options').innerHTML='<button onclick="location.reload()">Play again ↻</button>'}
+function openLetter(){document.getElementById('letter-copy').classList.add('show');confettiBurst()}
+function grandFinale(){confettiBurst();fireworks();document.getElementById('finale').scrollIntoView({behavior:'smooth'});let btn=document.querySelector('#finale .btn');btn.textContent='Again! More sparkle! ✨'}
+</script>
+</body>
+</html>
